@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	const postData = req.body;
 	console.log('Received POST request with data:', postData);
     	// Process the data...
-    	const responseHtml = `<h1 style="color: white;">Hello from the server!</h1><p style="color: yellow;">You submitted: ${postData.seatclass}</p>`;
+    	const responseHtml = `<h1 style="color: white;">Hello from the server!</h1><p style="color: yellow;">You seat class is: ${postData.seatclass}</p>`;
     	res.send(responseHtml);
     });
 
