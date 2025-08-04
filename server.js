@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	const postData = req.body;
 	console.log('Received POST request with data:', postData);
     	// Process the data...
-    	const responseHtml = `<h1 style="color: white;">Hello from the server!</h1><p style="color: yellow;">You seat class is: ${postData.seatclass}</p>`;
+    	const responseHtml = `<h1 style="color: green;">Hello from the server!</h1><p style="color: yellow;">You seat class is: ${postData.seatclass}</p>`;
     	res.send(responseHtml);
     });
 
@@ -21,3 +21,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
         console.log(`Server listening on port ${PORT}`);
         console.log(`POST endpoint: http://localhost:${PORT}/api/submit-data`);
     });
+
