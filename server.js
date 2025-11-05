@@ -1,7 +1,14 @@
     const express = require('express');
     const app = express();
+	const cors = require('cors');
     const PORT = 3000;
 const bodyParser = require('body-parser');
+app.use(cors({
+      origin: 'http://localhost:5173', // Replace with your React app's origin
+      methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+      allowedHeaders: ['My-Custom-Header', 'Content-Type'], // Crucial for custom headers
+    }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
     // Middleware to parse JSON bodies
@@ -34,6 +41,7 @@ app.get('/data', (req, res) => {
         console.log(`Server listening on port ${PORT}`);
         console.log(`POST endpoint: http://localhost:${PORT}/api/submit-data`);
     });
+
 
 
 
